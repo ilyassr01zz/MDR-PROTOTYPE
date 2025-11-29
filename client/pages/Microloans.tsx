@@ -34,9 +34,7 @@ export function Microloans() {
       return;
     }
 
-    // Calculate eligibility score based on user data
     calculateEligibility();
-    // Load mock applications
     loadApplications();
   }, [user, navigate]);
 
@@ -56,6 +54,16 @@ export function Microloans() {
     }
   };
 
+  const calculateMonthlyPayment = (amount: number, duration: number): number => {
+    const interestRate = 8.5;
+    const monthlyRate = interestRate / 100 / 12;
+    const numPayments = duration;
+    const payment =
+      (amount * monthlyRate * Math.pow(1 + monthlyRate, numPayments)) /
+      (Math.pow(1 + monthlyRate, numPayments) - 1);
+    return Math.round(payment * 100) / 100;
+  };
+
   const handleApplyForLoan = async () => {
     if (!loanAmount || parseFloat(loanAmount) <= 0) {
       alert("Please enter a valid loan amount");
@@ -71,19 +79,15 @@ export function Microloans() {
 
     setTimeout(() => {
       const interestRate = 8.5;
-      const monthlyRate = interestRate / 100 / 12;
-      const numPayments = parseInt(loanDuration);
-      const monthlyPayment =
-        (parseFloat(loanAmount) * monthlyRate * Math.pow(1 + monthlyRate, numPayments)) /
-        (Math.pow(1 + monthlyRate, numPayments) - 1);
+      const monthlyPayment = calculateMonthlyPayment(parseFloat(loanAmount), parseInt(loanDuration));
 
       const newApplication: LoanApplication = {
         id: "LOAN_" + Date.now(),
         amount: parseFloat(loanAmount),
-        duration: numPayments,
+        duration: parseInt(loanDuration),
         status: eligibilityScore >= 70 ? "approved" : "pending",
         appliedDate: new Date().toLocaleDateString(),
-        monthlyPayment: Math.round(monthlyPayment * 100) / 100,
+        monthlyPayment,
         interestRate,
       };
 
@@ -107,6 +111,8 @@ export function Microloans() {
   }
 
   const maxLoanAmount = Math.min(user.balance * 5, 50000);
+  const monthlyPayment = loanAmount ? calculateMonthlyPayment(parseFloat(loanAmount), parseInt(loanDuration)) : 0;
+  const totalRepayment = monthlyPayment * parseInt(loanDuration);
 
   return (
     <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
@@ -254,26 +260,11 @@ export function Microloans() {
                   </div>
                   <div className="flex justify-between text-sm">
                     <span className="text-gray-600">Monthly Payment:</span>
-                    <span className="font-medium text-primary">
-                      {(
-                        (parseFloat(loanAmount) *
-                          (0.085 / 12) *
-                          Math.pow(1 + 0.085 / 12, parseInt(loanDuration))) /
-                        (Math.pow(1 + 0.085 / 12, parseInt(loanDuration)) - 1)
-                      ).toFixed(2)) || "0.00"} MAD
-                    </span>
+                    <span className="font-medium text-primary">{monthlyPayment.toFixed(2)} MAD</span>
                   </div>
                   <div className="flex justify-between text-sm">
                     <span className="text-gray-600">Total Repayment:</span>
-                    <span className="font-medium">
-                      {(
-                        (parseFloat(loanAmount) *
-                          (0.085 / 12) *
-                          Math.pow(1 + 0.085 / 12, parseInt(loanDuration))) /
-                          (Math.pow(1 + 0.085 / 12, parseInt(loanDuration)) - 1) *
-                        parseInt(loanDuration)
-                      ).toFixed(2)) || "0.00"} MAD
-                    </span>
+                    <span className="font-medium">{totalRepayment.toFixed(2)} MAD</span>
                   </div>
                 </div>
               )}
