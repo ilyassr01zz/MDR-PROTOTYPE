@@ -1,12 +1,25 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Progress } from "@/components/ui/progress";
 import { getMockUser } from "@/lib/mockApi";
-import { DollarSign, TrendingUp, Clock, CheckCircle, AlertCircle, FileText } from "lucide-react";
+import {
+  DollarSign,
+  TrendingUp,
+  Clock,
+  CheckCircle,
+  AlertCircle,
+  FileText,
+} from "lucide-react";
 
 interface LoanApplication {
   id: string;
@@ -54,7 +67,10 @@ export function Microloans() {
     }
   };
 
-  const calculateMonthlyPayment = (amount: number, duration: number): number => {
+  const calculateMonthlyPayment = (
+    amount: number,
+    duration: number,
+  ): number => {
     const interestRate = 8.5;
     const monthlyRate = interestRate / 100 / 12;
     const numPayments = duration;
@@ -71,7 +87,9 @@ export function Microloans() {
     }
 
     if (eligibilityScore < 40) {
-      alert("Your eligibility score is too low. Please improve your account activity first.");
+      alert(
+        "Your eligibility score is too low. Please improve your account activity first.",
+      );
       return;
     }
 
@@ -79,7 +97,10 @@ export function Microloans() {
 
     setTimeout(() => {
       const interestRate = 8.5;
-      const monthlyPayment = calculateMonthlyPayment(parseFloat(loanAmount), parseInt(loanDuration));
+      const monthlyPayment = calculateMonthlyPayment(
+        parseFloat(loanAmount),
+        parseInt(loanDuration),
+      );
 
       const newApplication: LoanApplication = {
         id: "LOAN_" + Date.now(),
@@ -93,7 +114,10 @@ export function Microloans() {
 
       const updatedApplications = [newApplication, ...applications];
       setApplications(updatedApplications);
-      localStorage.setItem("microloanApplications", JSON.stringify(updatedApplications));
+      localStorage.setItem(
+        "microloanApplications",
+        JSON.stringify(updatedApplications),
+      );
 
       setLoanAmount("");
       setLoanDuration("12");
@@ -101,7 +125,7 @@ export function Microloans() {
       setLoading(false);
 
       alert(
-        `Loan application submitted! Status: ${newApplication.status === "approved" ? "✓ APPROVED" : "⏳ PENDING REVIEW"}`
+        `Loan application submitted! Status: ${newApplication.status === "approved" ? "✓ APPROVED" : "⏳ PENDING REVIEW"}`,
       );
     }, 1500);
   };
@@ -111,7 +135,9 @@ export function Microloans() {
   }
 
   const maxLoanAmount = Math.min(user.balance * 5, 50000);
-  const monthlyPayment = loanAmount ? calculateMonthlyPayment(parseFloat(loanAmount), parseInt(loanDuration)) : 0;
+  const monthlyPayment = loanAmount
+    ? calculateMonthlyPayment(parseFloat(loanAmount), parseInt(loanDuration))
+    : 0;
   const totalRepayment = monthlyPayment * parseInt(loanDuration);
 
   return (
@@ -139,7 +165,9 @@ export function Microloans() {
           <CardContent className="space-y-4">
             <div>
               <div className="flex justify-between mb-2">
-                <span className="font-semibold text-gray-900">{eligibilityScore}/100</span>
+                <span className="font-semibold text-gray-900">
+                  {eligibilityScore}/100
+                </span>
                 <span className="text-sm text-gray-600">
                   {eligibilityScore >= 70
                     ? "Excellent"
@@ -153,16 +181,26 @@ export function Microloans() {
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
               <div className="p-3 bg-white rounded-lg">
-                <p className="text-xs font-medium text-gray-600">Current Balance</p>
-                <p className="font-bold text-gray-900">{user.balance?.toFixed(2) || "0.00"} MAD</p>
+                <p className="text-xs font-medium text-gray-600">
+                  Current Balance
+                </p>
+                <p className="font-bold text-gray-900">
+                  {user.balance?.toFixed(2) || "0.00"} MAD
+                </p>
               </div>
               <div className="p-3 bg-white rounded-lg">
-                <p className="text-xs font-medium text-gray-600">Loyalty Points</p>
+                <p className="text-xs font-medium text-gray-600">
+                  Loyalty Points
+                </p>
                 <p className="font-bold text-gray-900">{user.points || 0}</p>
               </div>
               <div className="p-3 bg-white rounded-lg">
-                <p className="text-xs font-medium text-gray-600">Max Loan Available</p>
-                <p className="font-bold text-primary">{maxLoanAmount.toFixed(2)} MAD</p>
+                <p className="text-xs font-medium text-gray-600">
+                  Max Loan Available
+                </p>
+                <p className="font-bold text-primary">
+                  {maxLoanAmount.toFixed(2)} MAD
+                </p>
               </div>
             </div>
           </CardContent>
@@ -192,7 +230,9 @@ export function Microloans() {
                 <div className="p-4 bg-purple-50 border border-purple-200 rounded-lg">
                   <DollarSign className="w-5 h-5 text-purple-600 mb-2" />
                   <p className="font-semibold text-purple-900">Low Rates</p>
-                  <p className="text-sm text-purple-700">Starting at 8.5% APR</p>
+                  <p className="text-sm text-purple-700">
+                    Starting at 8.5% APR
+                  </p>
                 </div>
               </div>
 
@@ -209,9 +249,7 @@ export function Microloans() {
           <Card className="shadow-lg">
             <CardHeader>
               <CardTitle>Loan Application Form</CardTitle>
-              <CardDescription>
-                Fill in your loan requirements
-              </CardDescription>
+              <CardDescription>Fill in your loan requirements</CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
               <div>
@@ -252,7 +290,9 @@ export function Microloans() {
                   <h4 className="font-semibold text-gray-900">Loan Summary</h4>
                   <div className="flex justify-between text-sm">
                     <span className="text-gray-600">Loan Amount:</span>
-                    <span className="font-medium">{parseFloat(loanAmount).toFixed(2)} MAD</span>
+                    <span className="font-medium">
+                      {parseFloat(loanAmount).toFixed(2)} MAD
+                    </span>
                   </div>
                   <div className="flex justify-between text-sm">
                     <span className="text-gray-600">Interest Rate:</span>
@@ -260,11 +300,15 @@ export function Microloans() {
                   </div>
                   <div className="flex justify-between text-sm">
                     <span className="text-gray-600">Monthly Payment:</span>
-                    <span className="font-medium text-primary">{monthlyPayment.toFixed(2)} MAD</span>
+                    <span className="font-medium text-primary">
+                      {monthlyPayment.toFixed(2)} MAD
+                    </span>
                   </div>
                   <div className="flex justify-between text-sm">
                     <span className="text-gray-600">Total Repayment:</span>
-                    <span className="font-medium">{totalRepayment.toFixed(2)} MAD</span>
+                    <span className="font-medium">
+                      {totalRepayment.toFixed(2)} MAD
+                    </span>
                   </div>
                 </div>
               )}
@@ -321,19 +365,25 @@ export function Microloans() {
                         {app.status === "approved" && (
                           <div className="flex items-center space-x-1 bg-green-50 text-green-700 px-3 py-1 rounded-full">
                             <CheckCircle className="w-4 h-4" />
-                            <span className="text-sm font-semibold">Approved</span>
+                            <span className="text-sm font-semibold">
+                              Approved
+                            </span>
                           </div>
                         )}
                         {app.status === "pending" && (
                           <div className="flex items-center space-x-1 bg-yellow-50 text-yellow-700 px-3 py-1 rounded-full">
                             <Clock className="w-4 h-4" />
-                            <span className="text-sm font-semibold">Pending</span>
+                            <span className="text-sm font-semibold">
+                              Pending
+                            </span>
                           </div>
                         )}
                         {app.status === "rejected" && (
                           <div className="flex items-center space-x-1 bg-red-50 text-red-700 px-3 py-1 rounded-full">
                             <AlertCircle className="w-4 h-4" />
-                            <span className="text-sm font-semibold">Rejected</span>
+                            <span className="text-sm font-semibold">
+                              Rejected
+                            </span>
                           </div>
                         )}
                       </div>
@@ -341,15 +391,21 @@ export function Microloans() {
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-3 border-t">
                       <div>
                         <p className="text-xs text-gray-600">Monthly Payment</p>
-                        <p className="font-semibold text-gray-900">{app.monthlyPayment.toFixed(2)} MAD</p>
+                        <p className="font-semibold text-gray-900">
+                          {app.monthlyPayment.toFixed(2)} MAD
+                        </p>
                       </div>
                       <div>
                         <p className="text-xs text-gray-600">Interest Rate</p>
-                        <p className="font-semibold text-gray-900">{app.interestRate}%</p>
+                        <p className="font-semibold text-gray-900">
+                          {app.interestRate}%
+                        </p>
                       </div>
                       <div>
                         <p className="text-xs text-gray-600">Loan ID</p>
-                        <p className="font-semibold text-gray-900 text-sm">{app.id}</p>
+                        <p className="font-semibold text-gray-900 text-sm">
+                          {app.id}
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -362,7 +418,9 @@ export function Microloans() {
         {/* Info Section */}
         <Card className="shadow-lg bg-blue-50 border-blue-200">
           <CardHeader>
-            <CardTitle className="text-blue-900">How CIH Microloans Work</CardTitle>
+            <CardTitle className="text-blue-900">
+              How CIH Microloans Work
+            </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4 text-blue-800">
             <div className="flex space-x-4">
@@ -371,7 +429,10 @@ export function Microloans() {
               </div>
               <div>
                 <p className="font-semibold">Apply</p>
-                <p className="text-sm">Fill out the simple application form with your desired loan amount</p>
+                <p className="text-sm">
+                  Fill out the simple application form with your desired loan
+                  amount
+                </p>
               </div>
             </div>
             <div className="flex space-x-4">
@@ -380,7 +441,10 @@ export function Microloans() {
               </div>
               <div>
                 <p className="font-semibold">Get Approved</p>
-                <p className="text-sm">Receive instant or fast approval based on your eligibility score</p>
+                <p className="text-sm">
+                  Receive instant or fast approval based on your eligibility
+                  score
+                </p>
               </div>
             </div>
             <div className="flex space-x-4">
@@ -389,7 +453,9 @@ export function Microloans() {
               </div>
               <div>
                 <p className="font-semibold">Receive Funds</p>
-                <p className="text-sm">Funds are transferred directly to your CIH Smart Wallet</p>
+                <p className="text-sm">
+                  Funds are transferred directly to your CIH Smart Wallet
+                </p>
               </div>
             </div>
             <div className="flex space-x-4">
@@ -398,7 +464,9 @@ export function Microloans() {
               </div>
               <div>
                 <p className="font-semibold">Repay Flexibly</p>
-                <p className="text-sm">Choose your repayment schedule from 6 to 36 months</p>
+                <p className="text-sm">
+                  Choose your repayment schedule from 6 to 36 months
+                </p>
               </div>
             </div>
           </CardContent>

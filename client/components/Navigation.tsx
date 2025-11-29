@@ -22,7 +22,9 @@ export function Navigation() {
           <div className="flex justify-between items-center h-16">
             <Link to="/" className="flex items-center space-x-2">
               <Wallet className="w-6 h-6" />
-              <span className="font-bold text-lg hidden sm:inline">CIH Smart Wallet</span>
+              <span className="font-bold text-lg hidden sm:inline">
+                CIH Smart Wallet
+              </span>
               <span className="font-bold text-lg sm:hidden">CIH Wallet</span>
             </Link>
 

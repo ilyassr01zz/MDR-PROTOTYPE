@@ -162,7 +162,10 @@ export async function cashinSimulation(data: {
   };
 }
 
-export async function cashinConfirmation(data: { token: string; amount: string }) {
+export async function cashinConfirmation(data: {
+  token: string;
+  amount: string;
+}) {
   const user = getMockUser();
   if (user) {
     user.balance += parseFloat(data.amount);

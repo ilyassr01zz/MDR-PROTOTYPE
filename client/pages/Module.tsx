@@ -1,7 +1,13 @@
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { updateUserPoints, getMockUser } from "@/lib/mockApi";
 import { CheckCircle, BookOpen, Award } from "lucide-react";
 
@@ -23,7 +29,8 @@ interface ModuleContent {
 const moduleData: Record<string, ModuleContent> = {
   budgeting: {
     title: "Personal Budgeting 101",
-    description: "Learn how to create and manage your monthly budget effectively",
+    description:
+      "Learn how to create and manage your monthly budget effectively",
     content: `
       <h2>Understanding the 50/30/20 Budget Rule</h2>
       <p>The 50/30/20 rule is a simple budgeting method that divides your income into three categories:</p>
@@ -225,7 +232,9 @@ export function Module() {
             <CardTitle>Module Not Found</CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-gray-600 mb-4">The module you're looking for doesn't exist.</p>
+            <p className="text-gray-600 mb-4">
+              The module you're looking for doesn't exist.
+            </p>
             <Button onClick={() => navigate("/dashboard")} className="w-full">
               Back to Dashboard
             </Button>
@@ -282,11 +291,23 @@ export function Module() {
                 className="prose prose-sm sm:prose max-w-none"
                 dangerouslySetInnerHTML={{
                   __html: module.content
-                    .replace(/<h2>/g, '<h2 className="text-xl font-bold mt-6 mb-3 text-gray-900">')
-                    .replace(/<h2 className="[^"]*">/g, '<h2 class="text-xl font-bold mt-6 mb-3 text-gray-900">')
+                    .replace(
+                      /<h2>/g,
+                      '<h2 className="text-xl font-bold mt-6 mb-3 text-gray-900">',
+                    )
+                    .replace(
+                      /<h2 className="[^"]*">/g,
+                      '<h2 class="text-xl font-bold mt-6 mb-3 text-gray-900">',
+                    )
                     .replace(/<p>/g, '<p class="mb-3 text-gray-700">')
-                    .replace(/<ul>/g, '<ul class="list-disc list-inside mb-4 text-gray-700">')
-                    .replace(/<ol>/g, '<ol class="list-decimal list-inside mb-4 text-gray-700">')
+                    .replace(
+                      /<ul>/g,
+                      '<ul class="list-disc list-inside mb-4 text-gray-700">',
+                    )
+                    .replace(
+                      /<ol>/g,
+                      '<ol class="list-decimal list-inside mb-4 text-gray-700">',
+                    )
                     .replace(/<li>/g, '<li class="mb-2">'),
                 }}
               />
@@ -317,19 +338,27 @@ export function Module() {
             </CardHeader>
             <CardContent className="space-y-8">
               {module.quiz.map((question, index) => (
-                <div key={question.id} className="pb-6 border-b last:border-b-0">
+                <div
+                  key={question.id}
+                  className="pb-6 border-b last:border-b-0"
+                >
                   <p className="font-semibold text-gray-900 mb-4">
                     {index + 1}. {question.text}
                   </p>
                   <div className="space-y-3">
                     {question.options.map((option, optionIndex) => (
-                      <label key={optionIndex} className="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-gray-50 transition">
+                      <label
+                        key={optionIndex}
+                        className="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-gray-50 transition"
+                      >
                         <input
                           type="radio"
                           name={question.id}
                           value={optionIndex}
                           checked={answers[question.id] === optionIndex}
-                          onChange={() => handleQuizAnswer(question.id, optionIndex)}
+                          onChange={() =>
+                            handleQuizAnswer(question.id, optionIndex)
+                          }
                           className="w-4 h-4 text-primary"
                         />
                         <span className="ml-3 text-gray-700">{option}</span>
@@ -372,7 +401,9 @@ export function Module() {
                 <div className="text-5xl font-bold text-primary mb-4">
                   {score}/{module.quiz.length}
                 </div>
-                <p className="text-gray-600 text-lg mb-2">Questions Answered Correctly</p>
+                <p className="text-gray-600 text-lg mb-2">
+                  Questions Answered Correctly
+                </p>
                 {score === module.quiz.length && (
                   <div className="inline-flex items-center space-x-2 bg-green-50 text-green-700 px-4 py-2 rounded-lg">
                     <Award className="w-5 h-5" />
@@ -386,7 +417,8 @@ export function Module() {
                   🎉 +{module.points} Points Earned!
                 </p>
                 <p className="text-blue-800 text-sm">
-                  You've earned {module.points} loyalty points that can be redeemed in your CIH account.
+                  You've earned {module.points} loyalty points that can be
+                  redeemed in your CIH account.
                 </p>
               </div>
 

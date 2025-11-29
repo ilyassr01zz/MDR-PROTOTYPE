@@ -1,9 +1,23 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { getMockUser, claimRecommendation } from "@/lib/mockApi";
-import { Gift, Zap, Code, Shield, Smartphone, Briefcase, ArrowRight } from "lucide-react";
+import {
+  Gift,
+  Zap,
+  Code,
+  Shield,
+  Smartphone,
+  Briefcase,
+  ArrowRight,
+} from "lucide-react";
 
 interface Recommendation {
   id: string;
@@ -109,13 +123,17 @@ export function RecommendationsPage() {
             Personalized Offers For You
           </h1>
           <p className="text-gray-600">
-            Exclusive deals and discounts tailored to your profile as a CIH Smart Wallet user
+            Exclusive deals and discounts tailored to your profile as a CIH
+            Smart Wallet user
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {recommendations.map((rec) => (
-            <Card key={rec.id} className="shadow-lg hover:shadow-xl transition-shadow flex flex-col">
+            <Card
+              key={rec.id}
+              className="shadow-lg hover:shadow-xl transition-shadow flex flex-col"
+            >
               <CardHeader>
                 <div className="flex items-start justify-between mb-4">
                   <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center text-accent">
@@ -139,7 +157,9 @@ export function RecommendationsPage() {
                   className="w-full mt-auto"
                   onClick={() => handleClaimOffer(rec.id)}
                   disabled={claimedOffers.includes(rec.id)}
-                  variant={claimedOffers.includes(rec.id) ? "secondary" : "default"}
+                  variant={
+                    claimedOffers.includes(rec.id) ? "secondary" : "default"
+                  }
                 >
                   {claimedOffers.includes(rec.id) ? (
                     <>✓ Claimed</>
@@ -157,12 +177,14 @@ export function RecommendationsPage() {
         {claimedOffers.length > 0 && (
           <Card className="mt-8 bg-blue-50 border-blue-200">
             <CardHeader>
-              <CardTitle className="text-blue-900">Your Claimed Offers</CardTitle>
+              <CardTitle className="text-blue-900">
+                Your Claimed Offers
+              </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-blue-800">
-                You have claimed {claimedOffers.length} offer(s). Check your email for coupon codes
-                and redemption details.
+                You have claimed {claimedOffers.length} offer(s). Check your
+                email for coupon codes and redemption details.
               </p>
             </CardContent>
           </Card>

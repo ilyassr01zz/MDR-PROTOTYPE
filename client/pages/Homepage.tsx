@@ -1,7 +1,21 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Wallet, BookOpen, Gift, ArrowRight, Users, TrendingUp, Shield } from "lucide-react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  Wallet,
+  BookOpen,
+  Gift,
+  ArrowRight,
+  Users,
+  TrendingUp,
+  Shield,
+} from "lucide-react";
 
 export function Homepage() {
   const scrollToFeatures = () => {
@@ -19,7 +33,8 @@ export function Homepage() {
                 THE MOROCCAN DIGITAL RENAISSANCE
               </h2>
               <p className="text-sm sm:text-base text-white/70 italic">
-                Like Sisyphus pushing the boulder uphill, we persist in building financial empowerment
+                Like Sisyphus pushing the boulder uphill, we persist in building
+                financial empowerment
               </p>
             </div>
 
@@ -27,11 +42,15 @@ export function Homepage() {
               Your Smart Financial Companion by CIH
             </h1>
             <p className="text-lg sm:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              Learn, Save, and Grow Your Money Smarter with our innovative wallet platform
+              Learn, Save, and Grow Your Money Smarter with our innovative
+              wallet platform
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
               <Link to="/signup">
-                <Button size="lg" className="bg-white text-primary hover:bg-gray-100 w-full sm:w-auto">
+                <Button
+                  size="lg"
+                  className="bg-white text-primary hover:bg-gray-100 w-full sm:w-auto"
+                >
                   Get Started <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
@@ -52,7 +71,9 @@ export function Homepage() {
               </div>
               <div>
                 <div className="text-3xl sm:text-4xl font-bold">100M+</div>
-                <p className="text-white/80 mt-2">Annual Digital Transactions</p>
+                <p className="text-white/80 mt-2">
+                  Annual Digital Transactions
+                </p>
               </div>
               <div>
                 <div className="text-3xl sm:text-4xl font-bold">427</div>
@@ -64,14 +85,18 @@ export function Homepage() {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section
+        id="features"
+        className="py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-gray-50"
+      >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
               Why Choose CIH Smart Wallet?
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Experience the future of financial management with our comprehensive platform
+              Experience the future of financial management with our
+              comprehensive platform
             </p>
           </div>
 
@@ -86,7 +111,9 @@ export function Homepage() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Seamlessly manage your funds with integrated CIH banking services. Fast, secure, and reliable transactions at your fingertips.
+                  Seamlessly manage your funds with integrated CIH banking
+                  services. Fast, secure, and reliable transactions at your
+                  fingertips.
                 </p>
               </CardContent>
             </Card>
@@ -101,7 +128,9 @@ export function Homepage() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Get tailored offers and discounts based on your profile. From Adobe subscriptions for freelancers to exclusive deals just for you.
+                  Get tailored offers and discounts based on your profile. From
+                  Adobe subscriptions for freelancers to exclusive deals just
+                  for you.
                 </p>
               </CardContent>
             </Card>
@@ -116,7 +145,8 @@ export function Homepage() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Learn personal finance through engaging modules. Earn points, complete challenges, and redeem rewards in your CIH account.
+                  Learn personal finance through engaging modules. Earn points,
+                  complete challenges, and redeem rewards in your CIH account.
                 </p>
               </CardContent>
             </Card>
@@ -131,7 +161,8 @@ export function Homepage() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Bank-level security with encryption and fraud protection. Your financial data is always protected.
+                  Bank-level security with encryption and fraud protection. Your
+                  financial data is always protected.
                 </p>
               </CardContent>
             </Card>
@@ -145,7 +176,8 @@ export function Homepage() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Get detailed analytics and insights about your spending patterns and financial health.
+                  Get detailed analytics and insights about your spending
+                  patterns and financial health.
                 </p>
               </CardContent>
             </Card>
@@ -159,7 +191,8 @@ export function Homepage() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Join thousands of users learning and growing together. Share tips and get expert advice anytime.
+                  Join thousands of users learning and growing together. Share
+                  tips and get expert advice anytime.
                 </p>
               </CardContent>
             </Card>
@@ -170,12 +203,17 @@ export function Homepage() {
       {/* CTA Section */}
       <section className="bg-gradient-to-r from-primary to-primary/90 text-white py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6">Ready to Transform Your Finances?</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+            Ready to Transform Your Finances?
+          </h2>
           <p className="text-lg text-white/90 mb-8">
             Join thousands of users who are already managing their money smarter
           </p>
           <Link to="/signup">
-            <Button size="lg" className="bg-white text-primary hover:bg-gray-100">
+            <Button
+              size="lg"
+              className="bg-white text-primary hover:bg-gray-100"
+            >
               Start Your Journey Today <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
           </Link>
@@ -188,27 +226,56 @@ export function Homepage() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-8">
             <div>
               <h3 className="text-white font-bold mb-4">CIH Smart Wallet</h3>
-              <p className="text-sm">Your trusted financial companion for smart money management.</p>
+              <p className="text-sm">
+                Your trusted financial companion for smart money management.
+              </p>
             </div>
             <div>
               <h4 className="text-white font-semibold mb-4">Quick Links</h4>
               <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:text-white transition">Terms of Service</a></li>
-                <li><a href="#" className="hover:text-white transition">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-white transition">Contact Us</a></li>
+                <li>
+                  <a href="#" className="hover:text-white transition">
+                    Terms of Service
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition">
+                    Privacy Policy
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition">
+                    Contact Us
+                  </a>
+                </li>
               </ul>
             </div>
             <div>
               <h4 className="text-white font-semibold mb-4">Support</h4>
               <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:text-white transition">Help Center</a></li>
-                <li><a href="#" className="hover:text-white transition">FAQ</a></li>
-                <li><a href="#" className="hover:text-white transition">Contact Support</a></li>
+                <li>
+                  <a href="#" className="hover:text-white transition">
+                    Help Center
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition">
+                    FAQ
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition">
+                    Contact Support
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
           <div className="border-t border-gray-700 pt-8 text-center text-sm">
-            <p>&copy; 2024 CIH Smart Wallet. All rights reserved. Powered by CIH Bank.</p>
+            <p>
+              &copy; 2024 CIH Smart Wallet. All rights reserved. Powered by CIH
+              Bank.
+            </p>
           </div>
         </div>
       </footer>

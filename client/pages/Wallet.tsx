@@ -1,7 +1,13 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import {
   getMockUser,
   getBalance,
@@ -10,7 +16,13 @@ import {
   cashinConfirmation,
   Transaction,
 } from "@/lib/mockApi";
-import { RefreshCw, Plus, TrendingUp, Calendar, MoreVertical } from "lucide-react";
+import {
+  RefreshCw,
+  Plus,
+  TrendingUp,
+  Calendar,
+  MoreVertical,
+} from "lucide-react";
 
 export function WalletPage() {
   const navigate = useNavigate();
@@ -103,7 +115,9 @@ export function WalletPage() {
         {/* Header */}
         <div>
           <h1 className="text-3xl font-bold text-gray-900 mb-2">My Wallet</h1>
-          <p className="text-gray-600">Manage your funds and view transaction history</p>
+          <p className="text-gray-600">
+            Manage your funds and view transaction history
+          </p>
         </div>
 
         {/* Balance Card */}
@@ -127,7 +141,9 @@ export function WalletPage() {
                 disabled={refreshing}
                 className="bg-white text-primary hover:bg-gray-100 flex-1"
               >
-                <RefreshCw className={`w-4 h-4 mr-2 ${refreshing ? "animate-spin" : ""}`} />
+                <RefreshCw
+                  className={`w-4 h-4 mr-2 ${refreshing ? "animate-spin" : ""}`}
+                />
                 Refresh Balance
               </Button>
               <Button
@@ -146,7 +162,9 @@ export function WalletPage() {
           <Card className="shadow-lg bg-white border-2 border-primary">
             <CardHeader>
               <CardTitle>Add Funds to Your Wallet</CardTitle>
-              <CardDescription>Enter the amount you want to deposit</CardDescription>
+              <CardDescription>
+                Enter the amount you want to deposit
+              </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div>
@@ -194,7 +212,9 @@ export function WalletPage() {
                 <Calendar className="w-5 h-5 text-primary" />
                 <div>
                   <CardTitle>Transaction History</CardTitle>
-                  <CardDescription>All your wallet transactions</CardDescription>
+                  <CardDescription>
+                    All your wallet transactions
+                  </CardDescription>
                 </div>
               </div>
             </div>
@@ -204,12 +224,24 @@ export function WalletPage() {
               <table className="w-full">
                 <thead>
                   <tr className="border-b border-gray-200">
-                    <th className="text-left py-3 px-4 font-semibold text-gray-900">Date</th>
-                    <th className="text-left py-3 px-4 font-semibold text-gray-900">Type</th>
-                    <th className="text-left py-3 px-4 font-semibold text-gray-900">Recipient</th>
-                    <th className="text-right py-3 px-4 font-semibold text-gray-900">Amount</th>
-                    <th className="text-right py-3 px-4 font-semibold text-gray-900">Fees</th>
-                    <th className="text-center py-3 px-4 font-semibold text-gray-900">Status</th>
+                    <th className="text-left py-3 px-4 font-semibold text-gray-900">
+                      Date
+                    </th>
+                    <th className="text-left py-3 px-4 font-semibold text-gray-900">
+                      Type
+                    </th>
+                    <th className="text-left py-3 px-4 font-semibold text-gray-900">
+                      Recipient
+                    </th>
+                    <th className="text-right py-3 px-4 font-semibold text-gray-900">
+                      Amount
+                    </th>
+                    <th className="text-right py-3 px-4 font-semibold text-gray-900">
+                      Fees
+                    </th>
+                    <th className="text-center py-3 px-4 font-semibold text-gray-900">
+                      Status
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -219,14 +251,17 @@ export function WalletPage() {
                         key={transaction.referenceId}
                         className="border-b border-gray-100 hover:bg-gray-50 transition"
                       >
-                        <td className="py-4 px-4 text-gray-900">{transaction.date}</td>
+                        <td className="py-4 px-4 text-gray-900">
+                          {transaction.date}
+                        </td>
                         <td className="py-4 px-4">
                           <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">
                             {transaction.type}
                           </span>
                         </td>
                         <td className="py-4 px-4 text-gray-700">
-                          {transaction.beneficiaryFirstName} {transaction.beneficiaryLastName}
+                          {transaction.beneficiaryFirstName}{" "}
+                          {transaction.beneficiaryLastName}
                         </td>
                         <td className="py-4 px-4 text-right font-semibold text-gray-900">
                           {transaction.amount} MAD
@@ -249,7 +284,10 @@ export function WalletPage() {
                     ))
                   ) : (
                     <tr>
-                      <td colSpan={6} className="py-8 text-center text-gray-600">
+                      <td
+                        colSpan={6}
+                        className="py-8 text-center text-gray-600"
+                      >
                         No transactions yet
                       </td>
                     </tr>
@@ -260,7 +298,10 @@ export function WalletPage() {
 
             {transactions.length > 0 && (
               <div className="mt-6 flex justify-center">
-                <Button variant="outline" className="text-primary border-primary hover:bg-primary/5">
+                <Button
+                  variant="outline"
+                  className="text-primary border-primary hover:bg-primary/5"
+                >
                   Load More Transactions
                 </Button>
               </div>
@@ -273,7 +314,9 @@ export function WalletPage() {
           <Card className="shadow-lg">
             <CardHeader>
               <CardTitle>Send Money</CardTitle>
-              <CardDescription>Transfer funds to another wallet</CardDescription>
+              <CardDescription>
+                Transfer funds to another wallet
+              </CardDescription>
             </CardHeader>
             <CardContent>
               <Button className="w-full bg-primary hover:bg-primary/90">

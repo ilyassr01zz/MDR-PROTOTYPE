@@ -1,6 +1,12 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { getMockUser, clearMockUser } from "@/lib/mockApi";
 import { User, Mail, Phone, MapPin, Award, LogOut, Edit } from "lucide-react";
@@ -39,7 +45,9 @@ export function Profile() {
                   <h1 className="text-2xl font-bold">
                     {user.clientFirstName} {user.clientLastName}
                   </h1>
-                  <p className="text-white/80">Member since {new Date().getFullYear()}</p>
+                  <p className="text-white/80">
+                    Member since {new Date().getFullYear()}
+                  </p>
                 </div>
               </div>
               <Button
@@ -67,7 +75,9 @@ export function Profile() {
                   <div className="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg">
                     <User className="w-5 h-5 text-primary flex-shrink-0" />
                     <div>
-                      <p className="text-xs font-medium text-gray-600">Full Name</p>
+                      <p className="text-xs font-medium text-gray-600">
+                        Full Name
+                      </p>
                       <p className="font-semibold text-gray-900">
                         {user.clientFirstName} {user.clientLastName}
                       </p>
@@ -78,7 +88,9 @@ export function Profile() {
                     <Mail className="w-5 h-5 text-primary flex-shrink-0" />
                     <div>
                       <p className="text-xs font-medium text-gray-600">Email</p>
-                      <p className="font-semibold text-gray-900">{user.email}</p>
+                      <p className="font-semibold text-gray-900">
+                        {user.email}
+                      </p>
                     </div>
                   </div>
 
@@ -86,15 +98,21 @@ export function Profile() {
                     <Phone className="w-5 h-5 text-primary flex-shrink-0" />
                     <div>
                       <p className="text-xs font-medium text-gray-600">Phone</p>
-                      <p className="font-semibold text-gray-900">{user.phoneNumber}</p>
+                      <p className="font-semibold text-gray-900">
+                        {user.phoneNumber}
+                      </p>
                     </div>
                   </div>
 
                   <div className="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg">
                     <MapPin className="w-5 h-5 text-primary flex-shrink-0" />
                     <div>
-                      <p className="text-xs font-medium text-gray-600">National ID</p>
-                      <p className="font-semibold text-gray-900">{user.legalId}</p>
+                      <p className="text-xs font-medium text-gray-600">
+                        National ID
+                      </p>
+                      <p className="font-semibold text-gray-900">
+                        {user.legalId}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -109,23 +127,31 @@ export function Profile() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg">
-                  <p className="text-sm font-medium text-blue-900 mb-2">Contract ID</p>
+                  <p className="text-sm font-medium text-blue-900 mb-2">
+                    Contract ID
+                  </p>
                   <p className="font-mono text-blue-800">{user.contractId}</p>
                 </div>
 
                 <div className="p-4 bg-purple-50 border border-purple-200 rounded-lg">
-                  <p className="text-sm font-medium text-purple-900 mb-2">Tier ID</p>
+                  <p className="text-sm font-medium text-purple-900 mb-2">
+                    Tier ID
+                  </p>
                   <p className="font-mono text-purple-800">{user.tierId}</p>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
-                    <p className="text-sm font-medium text-green-900 mb-2">Account Status</p>
+                    <p className="text-sm font-medium text-green-900 mb-2">
+                      Account Status
+                    </p>
                     <p className="font-semibold text-green-800">✓ Active</p>
                   </div>
 
                   <div className="p-4 bg-gray-50 border border-gray-200 rounded-lg">
-                    <p className="text-sm font-medium text-gray-600 mb-2">Account Type</p>
+                    <p className="text-sm font-medium text-gray-600 mb-2">
+                      Account Type
+                    </p>
                     <p className="font-semibold text-gray-900">Individual</p>
                   </div>
                 </div>
@@ -162,20 +188,26 @@ export function Profile() {
               <CardContent className="space-y-4">
                 <div>
                   <p className="text-sm text-gray-600 mb-1">Loyalty Points</p>
-                  <p className="text-3xl font-bold text-accent">{user.points || 0}</p>
+                  <p className="text-3xl font-bold text-accent">
+                    {user.points || 0}
+                  </p>
                 </div>
 
                 <hr className="my-4" />
 
                 <div>
-                  <p className="text-sm text-gray-600 mb-1">Modules Completed</p>
+                  <p className="text-sm text-gray-600 mb-1">
+                    Modules Completed
+                  </p>
                   <p className="text-3xl font-bold text-primary">0</p>
                 </div>
 
                 <hr className="my-4" />
 
                 <div>
-                  <p className="text-sm text-gray-600 mb-1">Total Transactions</p>
+                  <p className="text-sm text-gray-600 mb-1">
+                    Total Transactions
+                  </p>
                   <p className="text-3xl font-bold text-primary">3</p>
                 </div>
               </CardContent>

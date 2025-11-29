@@ -1,7 +1,13 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { createWallet } from "@/lib/mockApi";
@@ -95,7 +101,9 @@ export function SignUp() {
         navigate("/dashboard");
       }, 1500);
     } catch (err) {
-      setError("An error occurred while creating your wallet. Please try again.");
+      setError(
+        "An error occurred while creating your wallet. Please try again.",
+      );
     } finally {
       setLoading(false);
     }
@@ -116,9 +124,12 @@ export function SignUp() {
             <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-start space-x-3">
               <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
               <div>
-                <p className="text-green-800 font-medium">Welcome! Your account is created</p>
+                <p className="text-green-800 font-medium">
+                  Welcome! Your account is created
+                </p>
                 <p className="text-green-700 text-sm">
-                  Complete your financial literacy modules to earn points redeemable in your CIH account.
+                  Complete your financial literacy modules to earn points
+                  redeemable in your CIH account.
                 </p>
               </div>
             </div>
@@ -144,7 +155,9 @@ export function SignUp() {
                   disabled={loading || success}
                 />
                 {errors.firstName && (
-                  <p className="text-red-500 text-sm mt-1">{errors.firstName}</p>
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.firstName}
+                  </p>
                 )}
               </div>
 
@@ -193,7 +206,9 @@ export function SignUp() {
                 disabled={loading || success}
               />
               {errors.phoneNumber && (
-                <p className="text-red-500 text-sm mt-1">{errors.phoneNumber}</p>
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.phoneNumber}
+                </p>
               )}
             </div>
 
