@@ -35,6 +35,7 @@ function AppContent() {
         <Route path="/module/:moduleId" element={<Module />} />
         <Route path="/wallet" element={<WalletPage />} />
         <Route path="/recommendations" element={<RecommendationsPage />} />
+        <Route path="/microloans" element={<Microloans />} />
         <Route path="/profile" element={<Profile />} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />
