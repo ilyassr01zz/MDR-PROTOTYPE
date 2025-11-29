@@ -14,6 +14,15 @@ export function Homepage() {
       <section className="bg-gradient-to-br from-primary via-primary to-primary/80 text-white py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center">
+            <div className="mb-8">
+              <h2 className="text-xl sm:text-2xl font-bold text-white/90 mb-2">
+                THE MOROCCAN DIGITAL RENAISSANCE
+              </h2>
+              <p className="text-sm sm:text-base text-white/70 italic">
+                Like Sisyphus pushing the boulder uphill, we persist in building financial empowerment
+              </p>
+            </div>
+
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
               Your Smart Financial Companion by CIH
             </h1>
@@ -28,27 +37,26 @@ export function Homepage() {
               </Link>
               <Button
                 size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white/10 w-full sm:w-auto"
+                className="bg-white/20 text-white hover:bg-white/30 border border-white w-full sm:w-auto transition-all duration-200"
                 onClick={scrollToFeatures}
               >
                 Learn More
               </Button>
             </div>
 
-            {/* Stats */}
+            {/* Stats - Real CIH Bank Data */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center mt-16">
               <div>
-                <div className="text-3xl sm:text-4xl font-bold">10K+</div>
-                <p className="text-white/80 mt-2">Active Users</p>
+                <div className="text-3xl sm:text-4xl font-bold">3M+</div>
+                <p className="text-white/80 mt-2">CIH Bank Clients</p>
               </div>
               <div>
-                <div className="text-3xl sm:text-4xl font-bold">$50M+</div>
-                <p className="text-white/80 mt-2">Transactions</p>
+                <div className="text-3xl sm:text-4xl font-bold">100M+</div>
+                <p className="text-white/80 mt-2">Annual Digital Transactions</p>
               </div>
               <div>
-                <div className="text-3xl sm:text-4xl font-bold">98%</div>
-                <p className="text-white/80 mt-2">Satisfaction</p>
+                <div className="text-3xl sm:text-4xl font-bold">427</div>
+                <p className="text-white/80 mt-2">Physical Branches</p>
               </div>
             </div>
           </div>
