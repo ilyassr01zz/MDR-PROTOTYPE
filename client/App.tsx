@@ -14,6 +14,7 @@ import { WalletPage } from "./pages/Wallet";
 import { Module } from "./pages/Module";
 import { ModulesList } from "./pages/ModulesList";
 import { RecommendationsPage } from "./pages/Recommendations";
+import { Microloans } from "./pages/Microloans";
 import { Profile } from "./pages/Profile";
 import { NotFound } from "./pages/NotFound";
 
