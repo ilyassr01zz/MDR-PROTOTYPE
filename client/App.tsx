@@ -9,6 +9,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { Navigation } from "./components/Navigation";
 import { Homepage } from "./pages/Homepage";
 import { SignUp } from "./pages/SignUp";
+import { CreateWallet } from "./pages/CreateWallet";
 import { Dashboard } from "./pages/Dashboard";
 import { WalletPage } from "./pages/Wallet";
 import { Module } from "./pages/Module";
