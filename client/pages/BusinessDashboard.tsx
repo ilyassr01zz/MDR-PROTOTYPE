@@ -130,7 +130,9 @@ export function BusinessDashboard() {
         const transactions: Transaction[] = operationsData.result;
 
         const now = new Date();
-        const thirtyDaysAgo = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000);
+        const thirtyDaysAgo = new Date(
+          now.getTime() - 30 * 24 * 60 * 60 * 1000,
+        );
 
         const dailyData: { [key: string]: number } = {};
         let totalRevenue = 0;
@@ -161,7 +163,9 @@ export function BusinessDashboard() {
         // Create chart data
         const chartPoints: ChartDataPoint[] = Object.entries(dailyData)
           .map(([date, revenue]) => ({ date, revenue }))
-          .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
+          .sort(
+            (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime(),
+          )
           .slice(-30);
         setChartData(chartPoints);
 
@@ -218,7 +222,9 @@ export function BusinessDashboard() {
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
           <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
-          <p className="mt-4 text-gray-600">Loading your business dashboard...</p>
+          <p className="mt-4 text-gray-600">
+            Loading your business dashboard...
+          </p>
         </div>
       </div>
     );
@@ -239,7 +245,8 @@ export function BusinessDashboard() {
               </p>
               <div className="space-y-2 text-white/80 text-sm">
                 <p className="font-medium">
-                  👤 Wallet Holder: <span className="font-semibold">{clientName}</span>
+                  👤 Wallet Holder:{" "}
+                  <span className="font-semibold">{clientName}</span>
                 </p>
                 <p>📧 Email: {clientEmail}</p>
                 <p>📅 Today: {new Date().toLocaleDateString()}</p>
@@ -370,7 +377,8 @@ export function BusinessDashboard() {
                   </LineChart>
                 </ResponsiveContainer>
                 <p className="text-xs text-gray-500 mt-4 text-center">
-                  💡 Data auto-generated from the last 30 days of wallet activity
+                  💡 Data auto-generated from the last 30 days of wallet
+                  activity
                 </p>
               </div>
             ) : (
@@ -387,7 +395,9 @@ export function BusinessDashboard() {
             <div className="flex items-center justify-between">
               <div>
                 <CardTitle>Best-Selling Items</CardTitle>
-                <CardDescription>Top 5 products/services by sales</CardDescription>
+                <CardDescription>
+                  Top 5 products/services by sales
+                </CardDescription>
               </div>
               <BarChart className="w-6 h-6 text-primary" />
             </div>
@@ -434,7 +444,9 @@ export function BusinessDashboard() {
                 </span>
               </div>
               <div className="flex items-center justify-between p-3 bg-green-50 rounded-lg">
-                <span className="text-sm text-gray-700">📦 Inventory Value</span>
+                <span className="text-sm text-gray-700">
+                  📦 Inventory Value
+                </span>
                 <span className="font-semibold text-gray-900">
                   {inventoryData.totalValue.toFixed(2)} MAD
                 </span>
@@ -487,7 +499,9 @@ export function BusinessDashboard() {
                 </span>
               </div>
               <div className="pt-4 border-t-2 border-red-200 flex items-center justify-between">
-                <span className="font-bold text-gray-900">Total Liabilities</span>
+                <span className="font-bold text-gray-900">
+                  Total Liabilities
+                </span>
                 <span className="text-lg font-bold text-red-600">
                   {(
                     liabilities.outstandingDues + liabilities.paymentObligations
@@ -565,13 +579,17 @@ export function BusinessDashboard() {
               </div>
               <div
                 className={`w-32 h-32 rounded-full ${getDRSBgColor(
-                  drsScore
+                  drsScore,
                 )} flex items-center justify-center`}
               >
                 <div className="text-center">
                   <p className="text-xs text-gray-700">Score Range</p>
                   <p className="font-semibold text-gray-900">
-                    {drsScore > 70 ? "Excellent" : drsScore >= 40 ? "Good" : "Needs Work"}
+                    {drsScore > 70
+                      ? "Excellent"
+                      : drsScore >= 40
+                        ? "Good"
+                        : "Needs Work"}
                   </p>
                 </div>
               </div>
