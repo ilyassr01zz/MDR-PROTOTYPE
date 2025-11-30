@@ -269,3 +269,110 @@ export function clearMockUser() {
   mockUserData = null;
   localStorage.removeItem("cihWalletUser");
 }
+
+export async function getBoostPoints() {
+  const user = getMockUser();
+  return {
+    result: {
+      totalPoints: user?.points || 0,
+      weeklyChange: 2,
+      redemptionHistory: [
+        { date: "2024-01-10", points: 50, action: "Claimed offer" },
+        { date: "2024-01-05", points: 100, action: "Completed module" },
+      ],
+    },
+  };
+}
+
+export async function getInvoicesList() {
+  return {
+    result: {
+      total: 12,
+      paid: 8,
+      unpaid: 4,
+      invoices: [
+        {
+          id: "INV-001",
+          amount: 1500,
+          status: "paid",
+          date: "2024-01-15",
+        },
+        {
+          id: "INV-002",
+          amount: 2300,
+          status: "unpaid",
+          date: "2024-01-14",
+        },
+        {
+          id: "INV-003",
+          amount: 800,
+          status: "paid",
+          date: "2024-01-13",
+        },
+        {
+          id: "INV-004",
+          amount: 1200,
+          status: "unpaid",
+          date: "2024-01-12",
+        },
+      ],
+    },
+  };
+}
+
+export async function getDRSScore() {
+  return {
+    result: {
+      score: 78,
+      trend: "up",
+      weeklyChange: 2,
+      components: {
+        transactionHistory: 85,
+        accountAge: 75,
+        paymentReliability: 72,
+      },
+    },
+  };
+}
+
+export async function getInventoryList() {
+  return {
+    result: {
+      totalItems: 156,
+      lowStockAlerts: 3,
+      totalValue: 45230.5,
+      items: [
+        {
+          id: "ITM-001",
+          name: "Haircut Service",
+          quantity: 250,
+          status: "stock",
+        },
+        {
+          id: "ITM-002",
+          name: "Delivery Service",
+          quantity: 15,
+          status: "lowstock",
+        },
+        {
+          id: "ITM-003",
+          name: "Cleaning Service",
+          quantity: 8,
+          status: "lowstock",
+        },
+        {
+          id: "ITM-004",
+          name: "Box of Pastries",
+          quantity: 45,
+          status: "stock",
+        },
+        {
+          id: "ITM-005",
+          name: "Repair Service",
+          quantity: 2,
+          status: "critical",
+        },
+      ],
+    },
+  };
+}
