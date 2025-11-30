@@ -17,6 +17,7 @@ import { RecommendationsPage } from "./pages/Recommendations";
 import { Microloans } from "./pages/Microloans";
 import { Profile } from "./pages/Profile";
 import { NotFound } from "./pages/NotFound";
+import { BusinessDashboard } from "./pages/BusinessDashboard";
 
 const queryClient = new QueryClient();
 
