@@ -37,13 +37,12 @@ const languages: LanguageOption[] = [
 // Mock translations for content
 const getTranslatedContent = (
   originalContent: string,
-  language: Language
+  language: Language,
 ): string => {
   const translations: Record<Language, Record<string, string>> = {
     ar: {
       "Personal Budgeting 101": "إدارة الموازنة الشخصية 101",
-      "Understanding the 50/30/20 Budget Rule":
-        "فهم قاعدة الميزانية 50/30/20",
+      "Understanding the 50/30/20 Budget Rule": "فهم قاعدة الميزانية 50/30/20",
       "50% for Needs": "50٪ للاحتياجات الأساسية",
       "30% for Wants": "30٪ للرغبات",
       "20% for Savings": "20٪ للادخار",
@@ -79,7 +78,8 @@ const getTranslatedContent = (
 export function VoiceAgent({ content, moduleTitle }: VoiceAgentProps) {
   const [selectedLanguage, setSelectedLanguage] = useState<Language>("ar");
   const [isPlaying, setIsPlaying] = useState(false);
-  const [currentUtterance, setCurrentUtterance] = useState<SpeechSynthesisUtterance | null>(null);
+  const [currentUtterance, setCurrentUtterance] =
+    useState<SpeechSynthesisUtterance | null>(null);
 
   const languageMap: Record<Language, string> = {
     ar: "ar-SA",

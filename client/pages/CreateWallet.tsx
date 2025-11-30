@@ -1,6 +1,12 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { getMockUser, createWallet } from "@/lib/mockApi";
 import { CheckCircle, Code, Loader, AlertCircle } from "lucide-react";
@@ -34,7 +40,7 @@ export function CreateWallet() {
     endpoint: string,
     method: string,
     status: "pending" | "success" | "error",
-    response: any
+    response: any,
   ) => {
     const newResponse: APIResponse = {
       endpoint,
@@ -89,7 +95,7 @@ export function CreateWallet() {
             "/wallet/clientinfo",
             "POST",
             "success",
-            clientInfoResponse
+            clientInfoResponse,
           );
 
           // Step 3: Get Balance
@@ -107,7 +113,7 @@ export function CreateWallet() {
                 "/wallet/balance",
                 "GET",
                 "success",
-                balanceResponse
+                balanceResponse,
               );
 
               setLoading(false);
@@ -247,11 +253,15 @@ export function CreateWallet() {
               </div>
               <div>
                 <p className="text-sm text-gray-600">Phone</p>
-                <p className="font-semibold text-gray-900">{user.phoneNumber}</p>
+                <p className="font-semibold text-gray-900">
+                  {user.phoneNumber}
+                </p>
               </div>
               <div>
                 <p className="text-sm text-gray-600">Contract ID</p>
-                <p className="font-mono text-sm text-gray-900">{user.contractId}</p>
+                <p className="font-mono text-sm text-gray-900">
+                  {user.contractId}
+                </p>
               </div>
               <div>
                 <p className="text-sm text-gray-600">Initial Balance</p>
