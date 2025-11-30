@@ -313,6 +313,14 @@ export function Module() {
                 }}
               />
 
+              {/* Voice Agent */}
+              <div className="mt-8">
+                <VoiceAgent
+                  content={module.title}
+                  moduleTitle={module.title}
+                />
+              </div>
+
               <div className="mt-8 p-4 bg-blue-50 border border-blue-200 rounded-lg">
                 <p className="text-blue-900 font-medium">
                   📚 Complete the quiz to earn {module.points} points!
