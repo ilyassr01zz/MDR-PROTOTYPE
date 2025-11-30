@@ -98,7 +98,7 @@ export function SignUp() {
       setSuccess(true);
 
       setTimeout(() => {
-        navigate("/dashboard");
+        navigate("/create-wallet");
       }, 1500);
     } catch (err) {
       setError(
