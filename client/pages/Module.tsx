@@ -8,6 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { VoiceAgent } from "@/components/VoiceAgent";
 import { updateUserPoints, getMockUser } from "@/lib/mockApi";
 import { CheckCircle, BookOpen, Award } from "lucide-react";
 
