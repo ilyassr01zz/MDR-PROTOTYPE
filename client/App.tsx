@@ -33,6 +33,7 @@ function AppContent() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/create-wallet" element={<CreateWallet />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/business-dashboard" element={<BusinessDashboard />} />
         <Route path="/modules" element={<ModulesList />} />
         <Route path="/module/:moduleId" element={<Module />} />
         <Route path="/wallet" element={<WalletPage />} />
