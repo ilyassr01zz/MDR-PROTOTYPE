@@ -13,7 +13,7 @@
 
 ## Overview
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/your-site-id/deploy-status)][(https://your-new-name.netlify.app)](https://mdr-bank-prototype.netlify.app/)
+## 🔗 [Live Demo](https://mdr-bank-prototype.netlify.app)
 
 The *MDR Prototype* allows users to:
 
