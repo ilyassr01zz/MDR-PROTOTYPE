@@ -13,7 +13,7 @@
 
 ## Overview
 
-Website Link: (https://69b580dcf87b48219a55f11e--merry-pixie-630ab8.netlify.app/)
+Website Link: https://merry-pixie-630ab8.netlify.app/
 
 The *MDR Prototype* allows users to:
 
