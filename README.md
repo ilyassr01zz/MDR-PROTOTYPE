@@ -155,32 +155,3 @@ Confirm:
 
 
 POST /atm/withdraw/confirm
-
-
----
-
-## Getting Started
-
-### 1. Clone the Repository
-```bash
-git clone https://github.com/YOUR_USERNAME/MDR-Prototype.git
-cd MDR-Prototype
-
-2. Install Dependencies
-npm install
-
-3. Start Mock API Server
-npm run api
-
-4. Run Frontend
-npm run dev
-
-Usage
-
-Register / Log in
-
-Create a wallet
-
-Perform wallet operations
-
-View balances and transactions
