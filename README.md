@@ -64,11 +64,11 @@ Personalized suggestions based on:
 
 | Layer | Technology |
 |-------|------------|
-| Frontend | Builder.io (React-based) |
+| Frontend | React + TypeScript |
 | Backend | Node.js + JSON Server (Mock API) |
 | Data Format | JSON |
 | Version Control | Git + GitHub |
-| Deployment | Builder.io Preview / GitHub Pages |
+| Deployment | Netlify / GitHub Pages |
 
 ---
 

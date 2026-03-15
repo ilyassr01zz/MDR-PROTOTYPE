@@ -377,8 +377,7 @@ export function BusinessDashboard() {
                   </LineChart>
                 </ResponsiveContainer>
                 <p className="text-xs text-gray-500 mt-4 text-center">
-                  💡 Data auto-generated from the last 30 days of wallet
-                  activity
+                  💡 Last 30 days of wallet activity
                 </p>
               </div>
             ) : (
