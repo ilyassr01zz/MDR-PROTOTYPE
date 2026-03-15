@@ -16,6 +16,7 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
+    "types": ["vite/client"],
 
     /* Linting */
     "strict": false,
@@ -34,10 +35,15 @@
   },
   "include": [
     "client/**/*",
+    "shared/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
     "server/**/*",
-    "shared/**/*",
+    "netlify/functions/**/*",
+    "tailwind.config.ts",
     "vite.config.ts",
     "vite.config.server.ts"
-  ],
-  "exclude": ["node_modules", "dist"]
+  ]
 }

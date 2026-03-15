@@ -18,7 +18,7 @@
     "start": "node dist/server/node-build.mjs",
     "test": "vitest --run",
     "format.fix": "prettier --write .",
-    "typecheck": "tsc"
+    "typecheck": "tsc -p tsconfig.json && tsc -p tsconfig.server.json"
   },
   "dependencies": {
     "dotenv": "^17.2.1",

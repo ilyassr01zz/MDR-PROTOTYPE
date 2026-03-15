@@ -1,0 +1,20 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "lib": ["ES2020"],
+    "types": ["node"]
+  },
+  "include": [
+    "server/**/*",
+    "netlify/functions/**/*",
+    "shared/**/*",
+    "tailwind.config.ts",
+    "vite.config.ts",
+    "vite.config.server.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "client/**/*"
+  ]
+}
